@@ -246,9 +246,9 @@ export default function ReplayClient({ id }: { id: string }) {
                                             )}
                                         </div>
                                         {event.message && <span className="text-slate-300 mt-1">{event.message}</span>}
-                                        {event.metadata && Object.keys(event.metadata).length > 0 && (
+                                        {event.event_metadata && Object.keys(event.event_metadata).length > 0 && (
                                             <div className="mt-1 text-xs text-slate-600 bg-slate-950/50 p-2 rounded w-fit border border-slate-800/50">
-                                                {JSON.stringify(event.metadata)}
+                                                {JSON.stringify(event.event_metadata)}
                                             </div>
                                         )}
                                     </div>

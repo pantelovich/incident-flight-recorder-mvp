@@ -39,7 +39,7 @@ class Event(Base):
     actor_id = Column(String, nullable=True) 
     resource_id = Column(String, nullable=True)
     message = Column(String, nullable=True)
-    metadata = Column(JSON, nullable=True) # JSON column for arbitrary data
+    event_metadata = Column(JSON, nullable=True) # JSON column for arbitrary data
 
     incident = relationship("Incident", back_populates="events")
 

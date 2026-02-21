@@ -13,7 +13,7 @@ class EventBase(BaseModel):
     actor_id: Optional[str] = None
     resource_id: Optional[str] = None
     message: Optional[str] = None
-    metadata_field: Optional[Dict[str, Any]] = Field(default=None, alias="metadata")
+    event_metadata: Optional[Dict[str, Any]] = None
 
 class EventCreate(EventBase):
     pass

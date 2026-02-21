@@ -71,7 +71,7 @@ def ingest_events_bulk(incident_id: str, events: List[schemas.EventCreate], db: 
             actor_id=event_in.actor_id,
             resource_id=event_in.resource_id,
             message=event_in.message,
-            metadata=event_in.metadata_field
+            event_metadata=event_in.event_metadata
         )
         db_events.append(db_event)
         

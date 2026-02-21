@@ -38,7 +38,7 @@ def create_demo_incident(db: Session, title: str = "Bad deploy + misconfigured s
             actor_id=actor_i,
             resource_id=res_i,
             message=msg,
-            metadata=meta or {}
+            event_metadata=meta or {}
         )
         events.append(e)
 
