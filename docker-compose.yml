@@ -36,12 +36,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    # Using dev setup for frontend for now to allow local editing without rebuild
-    command: npm run dev
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
     ports:
       - "3000:3000"
     environment:
