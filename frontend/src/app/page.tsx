@@ -76,12 +76,12 @@ export default function Dashboard() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {incidents.map((incident) => (
-            <Link key={incident.id} href={`/incidents/${incident.id}`}>
-              <div className="group rounded-xl border border-slate-800 bg-slate-900 overflow-hidden shadow-sm transition-all hover:bg-slate-800/80 hover:border-slate-700 hover:shadow-lg hover:-translate-y-1 block h-full">
-                <div className="p-6">
+            <Link key={incident.id} href={`/incidents/${incident.id}`} className="block w-full h-full">
+              <div className="group rounded-xl border border-slate-800 bg-slate-900 overflow-hidden shadow-sm transition-all hover:bg-slate-800/80 hover:border-slate-700 hover:shadow-lg hover:-translate-y-1 block h-full flex flex-col">
+                <div className="p-6 flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${incident.severity <= 2 ? 'bg-red-500/10 text-red-500 border border-red-500/20' :
-                        'bg-orange-500/10 text-orange-500 border border-orange-500/20'
+                      'bg-orange-500/10 text-orange-500 border border-orange-500/20'
                       }`}>
                       SEV-{incident.severity}
                     </span>
@@ -92,7 +92,7 @@ export default function Dashboard() {
                   <h3 className="text-xl font-semibold leading-none tracking-tight text-white mb-2">{incident.title}</h3>
                   <p className="text-sm text-slate-400 line-clamp-2">{incident.description}</p>
                 </div>
-                <div className="border-t border-slate-800 p-4 bg-slate-900/50 group-hover:bg-slate-800/50 flex justify-between items-center text-xs text-slate-500">
+                <div className="border-t border-slate-800 p-4 bg-slate-900/50 group-hover:bg-slate-800/50 flex justify-between items-center text-xs text-slate-500 mt-auto shrink-0">
                   <span>Env: <span className="text-slate-300 font-medium">{incident.environment}</span></span>
                   <span>{formatDistanceToNow(new Date(incident.start_time), { addSuffix: true })}</span>
                 </div>
